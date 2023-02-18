@@ -1,14 +1,9 @@
 import { Image, StyleSheet, useWindowDimensions } from "react-native";
 import React from "react";
 
-const HeroImageCard = () => {
+const HeroImageCard = ({ src }) => {
   const { width, height } = useWindowDimensions();
-  return (
-    <Image
-      source={require("../assets/images/landing-image-2.png")}
-      style={[styles.image, { width: width, height: height / 2, resizeMode: "contain" }]}
-    />
-  );
+  return <Image source={src} style={[styles.image, { width: width, height: height / 2, resizeMode: "contain" }]} />;
 };
 
 const styles = StyleSheet.create({

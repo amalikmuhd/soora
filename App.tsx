@@ -1,4 +1,5 @@
 import WelcomeScreen from "./app/screens/WelcomeScreen";
+// import ToastManager from 'toastify-react-native';
 // import { useFonts } from "expo-font";
 // import AppLoading from "expo-app-loading";
 
