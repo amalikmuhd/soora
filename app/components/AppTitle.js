@@ -17,9 +17,6 @@ const AppTitle = ({ tag1, tag2, title }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    // marginTop: 10,
-  },
   firstRow: {
     flexDirection: "row",
     alignItems: "center",

@@ -6,6 +6,8 @@ export default function UserInput() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  // submit
   const handle = () => {
     if (email.trim()) {
       setLoading(true);
@@ -18,6 +20,7 @@ export default function UserInput() {
     console.log(email);
   };
 
+  // Hide success message and clearn input value
   const hide = () => {
     setTimeout(() => {
       setEmail("");

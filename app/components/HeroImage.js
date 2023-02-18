@@ -10,10 +10,7 @@ const styles = StyleSheet.create({
   image: {
     marginTop: 20,
     marginBottom: 40,
-    // flex: 1,
     justifyContent: "center",
-    // width: 400,
-    // height: 359.64,
   },
 });
 
