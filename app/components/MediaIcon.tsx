@@ -1,10 +1,13 @@
 import { Image, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 
-export default function MediaIcon({ source }) {
+type MediaIconProps = {
+  source: any;
+};
+export default function MediaIcon(props: MediaIconProps) {
   return (
     <TouchableOpacity style={styles.containerStyle}>
-      <Image source={source} style={styles.imageStyle} />
+      <Image source={props.source} style={styles.imageStyle} />
     </TouchableOpacity>
   );
 }
@@ -13,7 +16,7 @@ const styles = StyleSheet.create({
   containerStyle: {
     width: 40,
     height: 40,
-    borderRadius: "50%",
+    borderRadius: 40 / 2,
     justifyContent: "center",
     alignItems: "center",
     borderColor: "black",

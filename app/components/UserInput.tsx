@@ -37,6 +37,7 @@ export default function UserInput() {
         <AppButton
           title={"Notify Me"}
           marginTop={1}
+          leadingIcon={false}
           onPress={() => {
             handle();
             setTimeout(() => {
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
     borderColor: "#0B0B0B",
     height: 45,
     width: 350,
-    borderRadius: "30%",
+    borderRadius: 20,
     paddingLeft: 15,
     paddingRight: 5,
     marginTop: 30,

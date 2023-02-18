@@ -1,4 +1,4 @@
-import WelcomeScreen from "./app/screens/WelcomeScreen";
+import HomepageScreen from "./app/screens/HomepageScreen";
 // import ToastManager from 'toastify-react-native';
 // import { useFonts } from "expo-font";
 // import AppLoading from "expo-app-loading";
@@ -13,5 +13,6 @@ export default function App() {
   // if (!fontsLoaded) {
   //   return <AppLoading />;
   // }
-  return <WelcomeScreen />;
+  // return <WelcomeScreen />;
+  return <HomepageScreen />;
 }

@@ -1,36 +1,30 @@
 import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 import React from "react";
-export default function AppButton({
-  title,
-  onPress,
-  textColor,
-  marginTop,
-  leadingIcon,
-  textTransform,
-  borderColor,
-  borderWidth,
-}) {
+
+type AppButtonProps = {
+  title: string;
+  onPress: any;
+  marginTop: number;
+  leadingIcon: boolean;
+};
+export default function AppButton(props: AppButtonProps) {
   return (
     <TouchableOpacity
-      onPress={onPress}
+      onPress={props.onPress}
       style={{
         ...styles.button,
-        marginTop: marginTop ? marginTop : "",
-        borderWidth: borderWidth ? borderWidth : "",
-        borderColor: borderColor ? borderColor : "",
+        marginTop: props.marginTop ? props.marginTop : 0,
       }}
     >
       <Text
         style={{
           ...styles.text,
-          color: textColor ? textColor : "white",
-          textTransform: !textTransform ? "none" : "uppercase",
         }}
       >
-        {title}
+        {props.title}
       </Text>
 
-      {leadingIcon && (
+      {props.leadingIcon && (
         <Image
           source={require("../assets/images/contact-icon.png")}
           style={{ width: 10, marginLeft: 8 }}
@@ -43,8 +37,6 @@ export default function AppButton({
 
 const styles = StyleSheet.create({
   button: {
-    // position: "absolute",
-    // right: 2,
     borderRadius: 100,
     display: "flex",
     flexDirection: "row",
@@ -59,5 +51,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "600",
     lineHeight: 15,
+    color: "#fff",
   },
 });

@@ -1,16 +1,22 @@
-import { View, Image, StyleSheet, Text } from "react-native";
+import { View, Image, StyleSheet, Text, TextStyle } from "react-native";
 import React from "react";
 
-const AppTitle = ({ tag1, tag2, title }) => {
+type AppTitleProps = {
+  tag: string;
+  tag2: string;
+  title: string;
+};
+
+const AppTitle = (props: AppTitleProps) => {
   return (
-    <View style={styles.container}>
+    <View>
       <View style={styles.firstRow}>
         <View style={styles.firstRowFirstItem} />
-        <Text style={styles.textStyle}>{title}</Text>
+        <Text style={styles.textStyle}>{props.title}</Text>
       </View>
       <Text style={styles.textHeaderStyle}>
-        {tag1}
-        {"\n"} {tag2}
+        {props.tag}
+        {"\n"} {props.tag2}
       </Text>
     </View>
   );

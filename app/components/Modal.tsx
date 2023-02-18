@@ -1,9 +1,13 @@
 import { Clipboard, StyleSheet, Text, TouchableOpacity, useWindowDimensions, View } from "react-native";
-import React, { useState } from "react";
-import ToastManager, { Toast } from "toastify-react-native";
+import React, { Fragment, useState } from "react";
+// import ToastManager, { Toast } from "toastify-react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function Modal({ setShow }) {
+type ModalProps = {
+  setShow: any;
+};
+
+export default function Modal(props: ModalProps) {
   const [showModal] = useState(true);
 
   const copyToClipboard = () => {
@@ -12,31 +16,33 @@ export default function Modal({ setShow }) {
 
   const handlePress = () => {
     copyToClipboard();
-    Toast.success("Copied to clipboard", "top");
+    // Toast.success("Copied to clipboard", "top");
     setTimeout(() => {
-      setShow(false);
+      props.setShow(false);
     }, 3000);
   };
 
   const { height, width } = useWindowDimensions();
   return (
-    showModal && (
-      <View style={{ ...styles.containerStyle, width: width, height: height }}>
-        <ToastManager />
-        <View style={{ ...styles.miniContainer, width: width / 1.1 }}>
-          <View>
-            <Text style={styles.titleStyle}>Reach out to use through</Text>
-            <View style={styles.emailContainerStyle}>
-              <Text style={styles.emailStyle}>sooratheapp@gmail.com</Text>
-              <TouchableOpacity style={styles.copyIconContainer} onPress={() => handlePress()}>
-                <MaterialIcons name="content-copy" size={14} color="#A6A6A6" />
-                <Text style={styles.copyIconText}>copy</Text>
-              </TouchableOpacity>
+    <Fragment>
+      {showModal && (
+        <View style={{ ...styles.containerStyle, width: width, height: height }}>
+          {/* <ToastManager /> */}
+          <View style={{ ...styles.miniContainer, width: width / 1.1 }}>
+            <View>
+              <Text style={styles.titleStyle}>Reach out to use through</Text>
+              <View style={styles.emailContainerStyle}>
+                <Text style={styles.emailStyle}>sooratheapp@gmail.com</Text>
+                <TouchableOpacity style={styles.copyIconContainer} onPress={() => handlePress()}>
+                  <MaterialIcons name="content-copy" size={14} color="#A6A6A6" />
+                  <Text style={styles.copyIconText}>copy</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
         </View>
-      </View>
-    )
+      )}
+    </Fragment>
   );
 }
 
